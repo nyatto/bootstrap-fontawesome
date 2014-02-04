@@ -6,6 +6,7 @@
 
 // Reset
 // @import "normalize.less";
+// @import "print.less";
 
 // Core CSS
 @import "scaffolding.less";
@@ -49,7 +50,7 @@
 
 // Utility classes
 @import "utilities.less";
-// @import "responsive-utilities.less";
+@import "responsive-utilities.less";
 
 @import "zurui.less";
 @import "flat-ui-colors.less";
@@ -75,7 +76,7 @@
 
 // Links
 // -------------------------
-@linkColor:        @baseColor;
+@link-color:        @baseColor;
 @link-hover-color: #adc435;
 
 // Typography
@@ -312,7 +313,7 @@ ol {
 	basic link colors
 -------------------------------------------------- */
 a {
-	color: @linkColor;
+	color: @link-color;
 	// text-decoration: underline;
 }
 a:hover, a:focus {

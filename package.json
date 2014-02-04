@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-fontawesome",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "bootstrap",
+    "fontawesome"
+  ],
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "",
+  "licenses": "",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-csscomb": "~2.0.1",
+    "load-grunt-tasks": "~0.3.0"
+  }
+}
