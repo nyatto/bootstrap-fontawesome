@@ -1,0 +1,27 @@
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+
+# Local files and directories
+bower.json
+bower_components/
+node_modules/
+build/**/*
+test/
