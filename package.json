@@ -10,7 +10,7 @@
   "scripts": {
     "test": "grunt test"
   },
-  "author": "",
+  "author": "nyatto",
   "licenses": "",
   "devDependencies": {
     "grunt": "~0.4.2",

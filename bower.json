@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap-fontawesome",
+  "version": "1.0.0",
+  "authors": "nyatto",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.1.0",
+    "jquery": "~2.1.0",
+    "font-awesome": "~4.0.3",
+    "html5shiv": "~3.7.0"
+  }
+}

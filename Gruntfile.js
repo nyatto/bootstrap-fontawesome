@@ -10,27 +10,27 @@ module.exports = function (grunt) {
       dist: 'build'
     },
 
-    jshint: {
-      // options: {
-      //   jshintrc: 'js/.jshintrc'
-      // },
-      grunt: {
-        src: 'Gruntfile.js'
-      },
-      src: {
-        src: 'js/*.js'
-      }
-    },
+    // jshint: {
+    //   // options: {
+    //   //   jshintrc: 'js/.jshintrc'
+    //   // },
+    //   grunt: {
+    //     src: 'Gruntfile.js'
+    //   },
+    //   src: {
+    //     src: 'src/js/*.js'
+    //   }
+    // },
 
-    csslint: {
-      // options: {
-      //   csslintrc: 'less/.csslintrc'
-      // },
-      src: [
-        'build/css/html5reset.css',
-        'build/css/styles.css'
-      ]
-    },
+    // csslint: {
+    //   // options: {
+    //   //   csslintrc: 'less/.csslintrc'
+    //   // },
+    //   src: [
+    //     'src/css/html5reset.css',
+    //     'src/css/styles.css'
+    //   ]
+    // },
 
     less: {
       development: {
@@ -90,12 +90,12 @@ module.exports = function (grunt) {
         tasks: ['jshint:gruntfile']
       },
       less: {
-        files: 'less/*.less',
+        files: './less/*.less',
         tasks: 'less'
-      },
-      htmls: {
-        files: '**/*.html'
       }
+      // htmls: {
+      //   files: '**/*.html'
+      // }
     }
   });
 
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
 
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'jshint', 'less', 'csscomb', 'copy', 'connect', 'watch']);
+  grunt.registerTask('default', ['clean', 'less', 'csscomb', 'copy', 'connect', 'watch']);
   // Task for build.
   grunt.registerTask('build', ['clean', 'copy', 'connect', 'watch']);
 

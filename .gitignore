@@ -20,8 +20,16 @@ Icon
 
 
 # Local files and directories
-bower.json
 bower_components/
 node_modules/
-build/**/*
+less/**/*
+fonts/
+build/
 test/
+src/js/*
+src/css/*
+
+!/less/zurui.less
+!/less/flat-ui-colors.less
+!/less/styles.less
+!/src/css/html5reset.css
