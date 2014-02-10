@@ -33,6 +33,4 @@ src/css/*
 !/less/flat-ui-colors.less
 !/less/styles.less
 !/src/css/html5reset.css
-
-src/js/*
 !.gitkeep
