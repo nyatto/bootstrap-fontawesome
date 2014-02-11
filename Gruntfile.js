@@ -10,63 +10,42 @@ module.exports = function (grunt) {
       dist: 'build'
     },
 
-    // jshint: {
-    //   // options: {
-    //   //   jshintrc: 'js/.jshintrc'
-    //   // },
-    //   grunt: {
-    //     src: 'Gruntfile.js'
-    //   },
-    //   src: {
-    //     src: 'src/js/*.js'
-    //   }
-    // },
-
-    // csslint: {
-    //   // options: {
-    //   //   csslintrc: 'less/.csslintrc'
-    //   // },
-    //   src: [
-    //     'src/css/html5reset.css',
-    //     'src/css/styles.css'
-    //   ]
-    // },
-
     less: {
-      development: {
+      dev: {
         files: {
           'src/css/styles.css': './less/styles.less'
         }
       },
-      production: {
+      dist: {
         options: {
-          cleancss: true
+          cleancss: true,
+          compress: true
         },
         files: {
-          'build/css/styles.css': './less/styles.less'
+          'src/css/styles.css': './less/styles.less'
         }
       }
     },
 
-    csscomb: {
-      sort: {
-        options: {
-          config: 'less/.csscomb.json'
-        },
-        files: {
-          'build/css/html5reset.css': 'build/css/html5reset.css',
-          'build/css/styles.css': 'build/css/styles.css'
-        }
-      }
-    },
+    // csscomb: {
+    //   sort: {
+    //     options: {
+    //       config: 'less/.csscomb.json'
+    //     },
+    //     files: {
+    //       'src/css/html5reset.css': 'src/css/html5reset.css',
+    //       'src/css/styles.css': 'src/css/styles.css'
+    //     }
+    //   }
+    // },
 
     copy: {
       fonts: {
         expand: true,
         src: 'fonts/*',
-        dest: 'build/'
+        dest: 'src/'
       },
-      files: {
+      dist: {
         expand: true,
         cwd: 'src/',
         src: ['**'],
@@ -79,7 +58,13 @@ module.exports = function (grunt) {
         options: {
           port: 9000,
           hostname: 'localhost',
-          base: 'build'
+          base: 'src'
+        },
+        livereload: {
+          options: {
+            base: 'src/',
+            open: true
+          }
         }
       }
     },
@@ -108,8 +93,8 @@ module.exports = function (grunt) {
 
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'less', 'csscomb', 'copy', 'connect', 'watch']);
+  grunt.registerTask('default', ['clean', 'less:dev', 'copy', 'connect', 'watch']);
   // Task for build.
-  grunt.registerTask('build', ['clean', 'copy', 'connect', 'watch']);
+  grunt.registerTask('build', ['clean', 'less:dist', 'copy:dist']);
 
 };
