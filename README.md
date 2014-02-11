@@ -1,7 +1,7 @@
 Bootstrap + Font Awesome
 =============
 
-Customised basic Bootstrap template for using Font Awesome.
+Customised basic Bootstrap + Font Awesome template for using Less.
 
 
 - Bootstrap: https://github.com/twbs/bootstrap
@@ -42,3 +42,4 @@ Copy Font Awesome `fonts` directory to the root.
 
     $ grunt
 
+Open up http://localhost:9000 in the browser.
