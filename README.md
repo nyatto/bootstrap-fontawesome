@@ -1,7 +1,7 @@
 Bootstrap + Font Awesome
 =============
 
-Customised basic Bootstrap template for using Font Awesome.
+Customised basic Bootstrap + Font Awesome template for using Less.
 
 
 - Bootstrap: https://github.com/twbs/bootstrap
@@ -19,7 +19,7 @@ Copy Bootstrap less files to `less` directory.
 
     $ cp bower_components/bootstrap/less/* ./less
 
-Copy Font Awesome `less` directory into `less` directory, and rename to `font-awesome`.
+Copy Font Awesome `less` directory into the root `less` directory, and rename to `font-awesome`.
 
     $ cp -r bower_components/font-awesome/less ./less
     $ mv ./less/less ./less/font-awesome
@@ -42,3 +42,4 @@ Copy Font Awesome `fonts` directory to the root.
 
     $ grunt
 
+Open up [http://localhost:9000](http://localhost:9000) in the browser.
