@@ -79,12 +79,15 @@ module.exports = function (grunt) {
         options: {
           port: 9000,
           hostname: 'localhost',
-          base: 'build'
+          base: 'src'
         }
       }
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       gruntfile: {
         files: 'Gruntfile.js',
         tasks: ['jshint:gruntfile']
@@ -92,10 +95,10 @@ module.exports = function (grunt) {
       less: {
         files: './less/*.less',
         tasks: 'less'
+      },
+      htmls: {
+        files: './src/**/*.html'
       }
-      // htmls: {
-      //   files: '**/*.html'
-      // }
     }
   });
 
