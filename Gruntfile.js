@@ -10,19 +10,32 @@ module.exports = function (grunt) {
       dist: 'build'
     },
 
+
+    jshint: {
+      options: {
+        jshintrc: 'js/.jshintrc'
+      },
+      grunt: {
+        src: 'Gruntfile.js'
+      },
+      src: {
+        src: 'src/js/*.js'
+      }
+    },
+
     less: {
       dev: {
         files: {
-          'src/css/styles.css': './less/styles.less'
+          'src/css/styles.css': 'less/styles.less'
         }
       },
       dist: {
-        options: {
-          cleancss: true,
-          compress: true
-        },
+        // options: {
+        //   cleancss: true,
+        //   compress: true
+        // },
         files: {
-          'src/css/styles.css': './less/styles.less'
+          'src/css/styles.css': 'less/styles.less'
         }
       }
     },
@@ -71,18 +84,20 @@ module.exports = function (grunt) {
 
     watch: {
       options: {
-        livereload: true
+        livereload: true,
+        spawn: false
       },
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['jshint:gruntfile']
+        tasks: ['jshint:grunt']
       },
       less: {
-        files: './less/*.less',
-        tasks: 'less'
+        files: 'less/*.less',
+        tasks: ['less']
       },
-      htmls: {
-        files: './src/**/*.html'
+      html: {
+        files: 'src/**/*.html',
+        tasks: ['default']
       }
     }
   });
@@ -93,7 +108,7 @@ module.exports = function (grunt) {
 
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'less:dev', 'copy', 'connect', 'watch']);
+  grunt.registerTask('default', ['less:dev', 'copy', 'connect', 'watch']);
   // Task for build.
   grunt.registerTask('build', ['clean', 'less:dist', 'copy:dist']);
 

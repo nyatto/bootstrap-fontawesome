@@ -5,15 +5,15 @@
 @import "mixins.less";
 
 // Reset
-// @import "normalize.less";
-// @import "print.less";
+@import "normalize.less";
+@import "print.less";
 
 // Core CSS
 @import "scaffolding.less";
-// @import "type.less";
-// @import "code.less";
+@import "type.less";
+@import "code.less";
 @import "grid.less";
-// @import "tables.less";
+@import "tables.less";
 @import "forms.less";
 @import "buttons.less";
 
@@ -22,15 +22,15 @@
 
 // Components
 @import "component-animations.less";
-// @import "dropdowns.less";
-// @import "button-groups.less";
-// @import "input-groups.less";
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
 @import "navs.less";
 @import "navbar.less";
 // @import "breadcrumbs.less";
 // @import "pagination.less";
 // @import "pager.less";
-// @import "labels.less";
+@import "labels.less";
 // @import "badges.less";
 @import "jumbotron.less";
 // @import "thumbnails.less";
@@ -61,233 +61,60 @@
 // LESS definition
 // --------------------------------------------------
 
-// Accent colors
-// -------------------------
-@baseColor:    #81b220;
-@bgColor:      (lighten(@clouds, 5%));
-
-@panel-bg:     @gray-lighter;
-
-
 // Brand colors
 // -------------------------
-@brand-gray:   #4d4d4d;
+@brand-base:   #00b5d6;
+@brand-green:  #009b48;
+@brand-orange: #ff7900;
+
+@label-default-bg: @brand-orange;
+
+.brand-base { color: @brand-base; }
+
+.btn-default {
+  .zurui-gradient-top-lighten(darken(@brand-base, 5%));
+  box-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2) inset;
+  border-color: darken(@brand-base, 8%);
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+  &:hover,
+  &:focus {
+    .zurui-gradient-top-darken(@brand-base);
+    border-color: darken(@brand-base, 10%);
+    color: #fff;
+  }
+}
 
 
 // Links
 // -------------------------
-@link-color:        @baseColor;
-@link-hover-color: #adc435;
+// @link-color:            @brand-primary;
+// @link-hover-color:      darken(@link-color, 15%);
+
 
 // Typography
 // -------------------------
-@font-family-base: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic Pro W3", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
-@theme-font:           "Roboto Slab", serif;
+@font-family-base: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic Pro W3", Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+// @theme-font:           "Sofia", cursive;
+// @text-color: #000;
+
+// @font-size-h1: (@font-size-base * 2); // ~28px
+// @font-size-h2: ceil((@font-size-base * 1.7)); // ~24px
+// @font-size-h3: ceil((@font-size-base * 1.4)); // ~20px
+
+// @font-size-body: ceil((@font-size-base * 1.14)); // ~16px
 
 
-// --------------------------------------------------
-// Scaffolding
-// --------------------------------------------------
-
-// // Reset the box-sizing
-// *,
-// *:before,
-// *:after {
-//   .box-sizing(border-box);
-// }
-
-// // Body reset
-// html {
-//   font-size: 62.5%;
-//   -webkit-tap-highlight-color: rgba(0,0,0,0);
-// }
-
-// body {
-//   font-family: @font-family-base;
-//   font-size: @font-size-base;
-//   line-height: @line-height-base;
-//   color: @text-color;
-//   background-color: @body-bg;
-// }
+// Components
+// -------------------------
+@border-radius-base: 5px;
 
 
-// --------------------------------------------------
 // Grid system
-// --------------------------------------------------
-// .container {
-// 	.container-fixed();
-// 	width: @container-md;
-// }
-
-// // mobile first defaults
-// .row {
-// 	.make-row();
-// }
-
-// // Common styles for small and large grid columns
-// .make-grid-columns();
-
-// // Medium grid
-// .make-grid-columns-float(md);
-// .make-grid(@grid-columns, md, width);
-// .make-grid(@grid-columns, md, pull);
-// .make-grid(@grid-columns, md, push);
-// .make-grid(@grid-columns, md, offset);
-
-
-// --------------------------------------------------
-// Typography
-// --------------------------------------------------
-
-// Headings
 // -------------------------
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  // font-family: @headings-font-family;
-  font-weight: @headings-font-weight;
-  line-height: @headings-line-height;
-  color: @headings-color;
-}
-
-h1, h2, h3 {
-  margin-top: @line-height-computed;
-  margin-bottom: (@line-height-computed / 2);
-}
-h4, h5, h6 {
-  margin-top: (@line-height-computed / 2);
-  margin-bottom: (@line-height-computed / 2);
-}
-
-h1, .h1 { font-size: @font-size-h1; }
-h2, .h2 { font-size: @font-size-h2; }
-h3, .h3 { font-size: @font-size-h3; }
-h4, .h4 { font-size: @font-size-h4; }
-h5, .h5 { font-size: @font-size-h5; }
-h6, .h6 { font-size: @font-size-h6; }
-
-
-// Body text
-// -------------------------
-
-p {
-  margin: 0 0 (@line-height-computed / 2);
-}
-
-.lead {
-  margin-bottom: @line-height-computed;
-  font-size: floor(@font-size-base * 1.15);
-  font-weight: 200;
-  line-height: 1.4;
-
-  // @media (min-width: @screen-sm-min) {
-  //   font-size: (@font-size-base * 1.5);
-  // }
-}
-
-// Emphasis & misc
-// -------------------------
-
-// Ex: 14px base font * 85% = about 12px
-small,
-.small  { font-size: 85%; }
-
-// Alignment
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-
-
-// --------------------------------------------------
-// Lists
-// --------------------------------------------------
-
-// Unordered and Ordered lists
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: (@line-height-computed / 2);
-  ul,
-  ol {
-    margin-bottom: 0;
-  }
-}
-
-// List options
-
-// Unstyled keeps list items block level, just removes default browser padding and list-style
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-// Inline turns list items into inline-block
-.list-inline {
-  .list-unstyled();
-
-  > li {
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-
-    &:first-child {
-      padding-left: 0;
-    }
-  }
-}
-
-
-// --------------------------------------------------
-// List groups
-// --------------------------------------------------
-
-// Base class
-.list-group {
-  margin-bottom: 20px;
-  padding-left: 0; // reset padding because ul and ol
-}
-
-// Individual list items
-// -------------------------
-
-.list-group-item {
-  // Place the border on the list items and negative margin up for better styling
-  margin-bottom: -1px;
-  background-color: @list-group-bg;
-  border: 1px solid @list-group-border;
-
-  // Round the first and last items
-  &:first-child {
-    .border-top-radius(@list-group-border-radius);
-  }
-  &:last-child {
-    margin-bottom: 0;
-    .border-bottom-radius(@list-group-border-radius);
-  }
-}
-
-.list-group-item a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  color: @list-group-link-color;
-  text-decoration: none;
-
-  // Hover state
-  &:hover,
-  &:focus {
-  	color: @link-hover-color;
-    text-decoration: none;
-    background-color: @list-group-hover-bg;
-  }
-
-  // Active class on item itself
-  &.active {
-  	color: @baseColor;
-    text-decoration: none;
-    background-color: @list-group-hover-bg;
-  }
-}
+@grid-gutter-width: 20px;
+@screen-md-min:      960px;
 
 
 // --------------------------------------------------
@@ -296,106 +123,59 @@ ol {
 
 // Base class
 .panel {
-  margin-bottom: (@grid-gutter-width / 2);
+  margin-bottom: @line-height-computed;
   background-color: @panel-bg;
-  border: 1px solid transparent;
-  // border-radius: @panel-border-radius;
-  .box-shadow(0 1px 1px rgba(0,0,0,.05));
-  padding: @grid-gutter-width;
-}
-.panel-lg {
-  padding: (@grid-gutter-width * 1.5);
+  border: 1px solid #cdcdcd;
+  border-radius: @panel-border-radius;
+  padding: @panel-body-padding;
+  .box-shadow(0 0 2px rgba(0,0,0,.05));
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
 // -------------------------------------------------------------------------------
 /* --------------------------------------------------
-	basic link colors
--------------------------------------------------- */
-a {
-	color: @link-color;
-	// text-decoration: underline;
-}
-a:hover, a:focus {
-	color: @link-hover-color;
-	// text-decoration: none;
-}
-
-
-/* --------------------------------------------------
-	basic structure
+  basic structure
 -------------------------------------------------- */
 body {
-	padding-top: 50px;
-	background-color: @bgColor;
-}
-.wrap {
-	position: relative;
-	width: (@container-md - @grid-gutter-width);
-	.clearfix();
+  padding-top: 50px;
+  background-color: @body-bg;
 }
 
-header {
-	position: relative;
-	.clearfix();
-}
-
-.content {
-	margin-bottom: (@grid-gutter-width * 1.5);
-}
+// header {
+//   position: relative;
+//   .clearfix();
+// }
 
 footer {
-	background-color: @gray-light;
-	color: #fff;
-	text-align: center;
+  background-color: @gray-light;
+  color: #fff;
+  text-align: center;
 }
 #copyright {
-	margin: 0;
-	font-family: verdana, sans-serif;
-	font-size: 12px;
-	line-height: 40px;
+  margin: 0;
+  font-family: verdana, sans-serif;
+  font-size: 12px;
+  line-height: 40px;
 }
 
 
 /* --------------------------------------------------
-	common styles
+  common styles
 -------------------------------------------------- */
-img.w100 {
-	width: 100%;
-	height: auto;
+img {
+  // max-width: 100%;
+  vertical-align: middle;
 }
-
-ol.ordered-list {
-	margin-left: 3em;
-}
-ol.ordered-list li {
-	list-style-type: decimal;
-}
-ul.unordered-list {
-	margin-left: 1.6em;
-}
-ul.unordered-list li {
-	list-style-type: disc;
-}
-
-.dl-horizontal dt {
-    clear: left;
-    float: left;
-    width: 7em;
-    padding-bottom: 10px;
-}
-.dl-horizontal dd {
-    margin-left: 7.5em;
-    padding-bottom: 10px;
-}
-.dl-horizontal dt:last-child, 
-.dl-horizontal dd:last-child {
-    padding-bottom: 0;
-}
+// img.w100 {
+//   width: 100%;
+//   height: auto;
+// }
 
 
 /* --------------------------------------------------
-	page content styles
+  page content styles
 -------------------------------------------------- */
 
 // トップページ

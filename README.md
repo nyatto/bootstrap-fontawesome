@@ -4,14 +4,14 @@ Bootstrap + Font Awesome
 Customised basic Bootstrap + Font Awesome template for using Less.
 
 
-- Bootstrap: https://github.com/twbs/bootstrap
-- Font Awesome: https://github.com/FortAwesome/Font-Awesome
+- [Bootstrap](https://github.com/twbs/bootstrap)
+- [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 
-## Usage
+## Getting started
 
 ### Install Bower components
 
-From the root of the repository, install packages and dependencies.
+Install packages in a project folder.
 
     $ bower install
 
@@ -32,7 +32,7 @@ Copy Font Awesome `fonts` directory to the root.
 
     $ npm install
 
-### Copy files for development
+Copy files for development.
 
     $ cp bower_components/jquery/jquery.min.js ./src/js
     $ cp bower_components/bootstrap/dist/js/bootstrap.min.js ./src/js
@@ -43,3 +43,9 @@ Copy Font Awesome `fonts` directory to the root.
     $ grunt
 
 Open up [http://localhost:9000](http://localhost:9000) in the browser.
+
+**Notes**: Need to install the [browser extensions](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) for using LiveReload.
+
+### Customise design
+
+Create websites with customising `style.less` file.
