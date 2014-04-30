@@ -22,6 +22,7 @@ Icon
 # Local files and directories
 bower_components/
 node_modules/
+less/*
 less/**/*
 fonts/
 build/

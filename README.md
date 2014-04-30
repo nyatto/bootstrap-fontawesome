@@ -48,4 +48,4 @@ Open up [http://localhost:9000](http://localhost:9000) in the browser.
 
 ### Customise design
 
-Create websites with customising `style.less` file.
+Create websites with customising `styles.less` file.
