@@ -17,7 +17,7 @@ Install packages in a project folder.
 
 Copy Bootstrap less files to `less` directory.
 
-    $ cp bower_components/bootstrap/less/* ./less
+    $ cp -r bower_components/bootstrap/less/* ./less
 
 Copy Font Awesome `less` directory into the root `less` directory, and rename to `font-awesome`.
 
@@ -34,9 +34,10 @@ Copy Font Awesome `fonts` directory to the root.
 
 Copy files for development.
 
-    $ cp bower_components/jquery/jquery.min.js ./src/js
+    $ cp bower_components/jquery/dist/jquery.min.js ./src/js
     $ cp bower_components/bootstrap/dist/js/bootstrap.min.js ./src/js
     $ cp bower_components/html5shiv/dist/html5shiv.js ./src/js
+    $ cp bower_components/respond/dest/respond.min.js ./src/js
 
 ### Run Grunt
 
