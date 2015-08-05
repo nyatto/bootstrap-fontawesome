@@ -4,9 +4,10 @@
 @import "variables.less";
 @import "mixins.less";
 
-// Reset
+// Reset and dependencies
 @import "normalize.less";
 @import "print.less";
+// @import "glyphicons.less";
 
 // Core CSS
 @import "scaffolding.less";
@@ -38,7 +39,8 @@
 // @import "progress-bars.less";
 // @import "media.less";
 // @import "list-group.less";
-// @import "panels.less";
+@import "panels.less";
+// @import "responsive-embed.less";
 // @import "wells.less";
 // @import "close.less";
 
@@ -122,16 +124,16 @@
 // --------------------------------------------------
 
 // Base class
-.panel {
-  margin-bottom: @line-height-computed;
-  background-color: @panel-bg;
-  border: 1px solid #cdcdcd;
-  border-radius: @panel-border-radius;
-  padding: @panel-body-padding;
-  .box-shadow(0 0 2px rgba(0,0,0,.05));
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+// .panel {
+//   margin-bottom: @line-height-computed;
+//   background-color: @panel-bg;
+//   border: 1px solid #cdcdcd;
+//   border-radius: @panel-border-radius;
+//   padding: @panel-body-padding;
+//   .box-shadow(0 0 2px rgba(0,0,0,.05));
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+// }
 
 
 // -------------------------------------------------------------------------------
@@ -168,10 +170,6 @@ img {
   // max-width: 100%;
   vertical-align: middle;
 }
-// img.w100 {
-//   width: 100%;
-//   height: auto;
-// }
 
 
 /* --------------------------------------------------
