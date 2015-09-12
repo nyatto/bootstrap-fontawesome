@@ -24,6 +24,12 @@ Copy Font Awesome `less` directory into the root `less` directory, and rename to
     $ cp -r bower_components/font-awesome/less ./less
     $ mv ./less/less ./less/font-awesome
 
+Move additional `less` files from `bs3-less-button-outline` directory to `less` directory, and remove empty `bs3-less-button-outline` directory.
+
+    $ mv ./bs3-less-button-outline/mixins.less ./less
+    $ mv ./bs3-less-button-outline/mixins/button-outline.less ./less/mixins
+    $ rm -r ./bs3-less-button-outline
+
 Copy Font Awesome `fonts` directory to the root.
 
     $ cp -r bower_components/font-awesome/fonts ./
