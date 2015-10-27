@@ -34,16 +34,16 @@ Copy Font Awesome `fonts` directory to the root.
 
     $ cp -r bower_components/font-awesome/fonts ./
 
-### Install Grunt and gruntplugins
-
-    $ npm install
-
 Copy files for development.
 
     $ cp bower_components/jquery/dist/jquery.min.js ./src/js
     $ cp bower_components/bootstrap/dist/js/bootstrap.min.js ./src/js
     $ cp bower_components/html5shiv/dist/html5shiv.js ./src/js
     $ cp bower_components/respond/dest/respond.min.js ./src/js
+
+### Install Grunt and gruntplugins
+
+    $ npm install
 
 ### Run Grunt
 
