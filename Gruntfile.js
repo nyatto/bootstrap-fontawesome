@@ -66,25 +66,48 @@ module.exports = function (grunt) {
       }
     },
 
-    connect: {
-      server: {
-        options: {
-          port: 9000,
-          hostname: 'localhost',
-          base: 'src'
-        },
-        livereload: {
-          options: {
-            base: 'src/',
-            open: true
-          }
+    // connect: {
+    //   server: {
+    //     options: {
+    //       port: 9000,
+    //       hostname: 'localhost',
+    //       base: 'src'
+    //     },
+    //     livereload: {
+    //       options: {
+    //         base: 'src/',
+    //         open: true
+    //       }
+    //     }
+    //   }
+    // },
+
+    browserSync: {
+      bsFiles: {
+        src : [
+          'src/css/*.css',
+          '*.html'
+        ]
+      },
+      options: {
+        // proxy: 'localhost',
+        port: 9000,
+        watchTask: true,
+        server: {
+          baseDir: 'src'
         }
+      }
+    },
+
+    bsReload: {
+      html: {
+        reload: true
       }
     },
 
     watch: {
       options: {
-        livereload: true,
+        // livereload: true,
         spawn: false
       },
       gruntfile: {
@@ -93,11 +116,11 @@ module.exports = function (grunt) {
       },
       less: {
         files: 'less/*.less',
-        tasks: ['less']
+        tasks: ['less:dev']
       },
       html: {
         files: 'src/**/*.html',
-        tasks: ['default']
+        tasks: ['bsReload:html']
       }
     }
   });
@@ -108,7 +131,7 @@ module.exports = function (grunt) {
 
 
   // Default task.
-  grunt.registerTask('default', ['less:dev', 'copy', 'connect', 'watch']);
+  grunt.registerTask('default', ['less:dev', 'copy', 'browserSync', 'watch']);
   // Task for build.
   grunt.registerTask('build', ['clean', 'less:dist', 'copy:dist']);
 
