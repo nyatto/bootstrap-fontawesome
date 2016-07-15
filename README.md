@@ -51,8 +51,6 @@ Copy files for development.
 
 Open up [http://localhost:9000](http://localhost:9000) in the browser.
 
-**Notes**: Need to install the [browser extensions](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) for using LiveReload.
-
 ### Customise design
 
 Create websites with customising `styles.less` file.
